@@ -5,6 +5,7 @@ pipeline {
       agent any
       steps {
         sh '/home/jenkins/scripts/build.sh'
+        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
     }
 
