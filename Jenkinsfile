@@ -4,20 +4,13 @@ pipeline {
     stage('Buzz Build') {
       agent any
       steps {
-        sh '''echo "Build in progress!!"
-sleep 5
-
-echo "Build done!!"'''
+        sh '/home/jenkins/scripts/build.sh'
       }
     }
 
     stage('Buzz Test') {
       steps {
-        sh '''echo "tests in progress!!!"
-
-sleep 5
-
-echo "success!!!"'''
+        sh '/home/jenkins/scripts/test-all.sh'
       }
     }
 
